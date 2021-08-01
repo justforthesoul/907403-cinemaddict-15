@@ -17,7 +17,7 @@ const commentsId = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 1
 const filmCardDescriptions = ['Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Cras aliquet varius magna, non porta ligula feugiat eget.', 'Fusce tristique felis at fermentum pharetra.', 'Aliquam id orci ut lectus varius viverra.',  'Nullam nunc ex, convallis sed finibus eget, sollicitudin eget ante.'];
 const filmCardGenres = ['Drama', 'Film-Noir', 'Mystery', 'Western', 'Musical', 'Comedy', 'Cartoon', 'Mystery'];
 const filmCardDirectors = ['Tom Ford', 'John Cromwell', 'Jennifer Aniston', 'Thomas Vinterberg', 'Taylor Dooley'];
-const filmCardWriters = ['Takeshi Kitano', 'Werner Herzog', 'Miles Teller', 'Diane Lane', 'Peter Stormare', 'Jack Black',];
+const filmCardWriters = ['Takeshi Kitano', 'Werner Herzog', 'Miles Teller', 'Diane Lane', 'Peter Stormare', 'Jack Black'];
 const filmCardActors = [ 'Morgan Freeman', 'Matilda De Angelis', 'Kevin Hart', 'Amanda Collin', 'Ji Chang-wook', 'Neslihan Atagül', 'Mark Dacascos', 'Tim Robbins'];
 const filmCardCountry = ['Finland', 'USA', 'France', 'China', 'USSR', 'England', 'Germany'];
 
