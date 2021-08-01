@@ -1,4 +1,4 @@
-const createElement = (template) => {
+export const createElement = (template) => {
   const newElement = document.createElement('div');
 
   newElement.innerHTML = template;
@@ -6,7 +6,7 @@ const createElement = (template) => {
   return newElement.firstChild;
 };
 
-const renderElement = (container, component, place = 'beforeend') => {
+export const renderElement = (container, component, place = 'beforeend') => {
   switch (place) {
     case 'prepend':
       container.prepend(component);
@@ -23,4 +23,6 @@ const renderElement = (container, component, place = 'beforeend') => {
   }
 };
 
-export {createElement, renderElement};
+export const renderElements = (container, component, place = 'beforeend') => {
+  container.insertAdjacentHTML(place, component);
+};
