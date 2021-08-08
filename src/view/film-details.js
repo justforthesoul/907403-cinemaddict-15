@@ -1,3 +1,5 @@
+import AbstractComponent from './abstract-component';
+
 const createGenresTemplate = (genres) => {
   return genres.map((el) => {
     return `<span class="film-details__genre">${el}</span>`;
@@ -28,7 +30,7 @@ const createCommentsTemplate = (comments) => {
   }).join('\n');
 };
 
-export const createFilmDetailsTemplate = (data) => {
+const createFilmDetailsTemplate = (data) => {
   const {
     poster,
     ageRating,
@@ -157,3 +159,15 @@ export const createFilmDetailsTemplate = (data) => {
   </form>
 </section>`;
 };
+
+
+export default class FilmDetails extends AbstractComponent {
+  constructor (popupData) {
+    super();
+    this._popupData = popupData;
+  }
+
+  getTemplate() {
+    return createFilmDetailsTemplate(this._popupData);
+  }
+}

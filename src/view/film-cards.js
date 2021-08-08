@@ -1,6 +1,6 @@
-import {appState} from '../app-state';
+import AbstractComponent from './abstract-component';
 
-const createFilmCardMarkup = (data) => {
+const createFilmCardTemplate = (data) => {
   const {
     id,
     title,
@@ -34,19 +34,14 @@ const createFilmCardMarkup = (data) => {
           </article>`;
 };
 
-export const createFilmListCardsTemplate = (state, data) => {
-  if (state === 'base') {
-    const {cardView, cardShown, allFilmsCounter} = appState;
-    const startCard = cardShown;
-    const stopCard = cardView + cardShown < allFilmsCounter ? cardView + cardShown : allFilmsCounter;
-    appState.cardShown = appState.cardShown + appState.cardView < allFilmsCounter ? appState.cardView + appState.cardShown : allFilmsCounter;
-    return data.map((el, index) => {
-      if (index >= startCard && index < stopCard) {
-        return createFilmCardMarkup(el);
-      }
-    }).join('\n');
+export default class FilmCard extends AbstractComponent {
+  constructor (card) {
+    super();
+    this._card = card;
   }
-  return data.map((el) => {
-    return createFilmCardMarkup(el);
-  }).join('\n');
-};
+
+  getTemplate() {
+    return createFilmCardTemplate(this._card);
+  }
+}
+
