@@ -160,7 +160,6 @@ const createFilmDetailsTemplate = (data) => {
 </section>`;
 };
 
-
 export default class FilmDetails extends AbstractComponent {
   constructor (popupData) {
     super();

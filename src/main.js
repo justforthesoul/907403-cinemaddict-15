@@ -35,21 +35,21 @@ if (!appState.allFilmsCounter) {
   const baseCardsView = new FilmListView('base').getElement();
   renderElement(filmsSectionElement, baseCardsView);
 
+  const renderMainCards = () => {
+    const {cardIntoView, cardShown, allFilmsCounter} = appState;
+    const startCard = cardShown;
+    const stopCard = cardIntoView + cardShown < allFilmsCounter ? cardIntoView + cardShown : allFilmsCounter;
+    appState.cardShown = appState.cardShown + appState.cardIntoView < allFilmsCounter ? appState.cardIntoView + appState.cardShown : allFilmsCounter;
+    for (let index = startCard; index < stopCard; index++) {
+      renderElement(baseCardsView.querySelector('.films-list__container'), new FilmCardView(allFilmCardsData[index]).getElement());
+    }
+  };
+
+  renderMainCards();
+
   if (appState.cardShown < appState.allFilmsCounter) {
     const showMoreButtonView = new ShowMoreButtonView();
     renderElement(filmsSectionElement, showMoreButtonView.getElement());
-
-    const renderMainCards = () => {
-      const {cardIntoView, cardShown, allFilmsCounter} = appState;
-      const startCard = cardShown;
-      const stopCard = cardIntoView + cardShown < allFilmsCounter ? cardIntoView + cardShown : allFilmsCounter;
-      appState.cardShown = appState.cardShown + appState.cardIntoView < allFilmsCounter ? appState.cardIntoView + appState.cardShown : allFilmsCounter;
-      for (let index = startCard; index < stopCard; index++) {
-        renderElement(baseCardsView.querySelector('.films-list__container'), new FilmCardView(allFilmCardsData[index]).getElement());
-      }
-    };
-
-    renderMainCards();
 
     const checkShowMoreButtonState = () => {
       if (appState.cardShown === appState.allFilmsCounter) {
