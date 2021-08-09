@@ -77,8 +77,7 @@ if (!cardsLength) {
 
   const renderMainCards = () => {
     const startCard = cardShown;
-    const stopCard = CARD_COUNTER + cardShown < cardsLength ? CARD_COUNTER + cardShown : cardsLength;
-    cardShown = CARD_COUNTER + cardShown < cardsLength ? CARD_COUNTER + cardShown : cardsLength;
+    const stopCard = cardShown = CARD_COUNTER + cardShown < cardsLength ? CARD_COUNTER + cardShown : cardsLength;
     for (let index = startCard; index < stopCard; index++) {
       renderCard(allFilmCardsData[index], baseCardsView);
     }
