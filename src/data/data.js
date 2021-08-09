@@ -1,7 +1,6 @@
 import dayjs from 'dayjs';
 import {getRandomizedFilmCard} from '../fake-data/film-card';
 import {getRandomizedComment} from '../fake-data/comment';
-import {appState} from '../app-state';
 
 const FILM_CARD_COUNT = 20;
 const COMMENTS_COUNT = 20;
@@ -35,7 +34,6 @@ const createCommentFakeData = () => {
 
 const filmCardFakeData = createFilmCardFakeData();
 const commentFakeData = createCommentFakeData();
-appState.allFilmsCounter = filmCardFakeData.length;
 
 const trimmingDescription = (desc) => {
   if (desc.length >= DESCRIPTION_COUNT) {

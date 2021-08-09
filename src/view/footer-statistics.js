@@ -1,10 +1,14 @@
 import AbstractComponent from './abstract-component';
-import {appState} from '../app-state';
 
-const footerStatisticsTemplate = () => `<p>${new Intl.NumberFormat('ru-RU').format(appState.allFilmsCounter)} movies inside</p>`;
+const footerStatisticsTemplate = (data) => `<p>${new Intl.NumberFormat('ru-RU').format(data.length)} movies inside</p>`;
 
 export default class FooterStatistics extends AbstractComponent {
+  constructor (allFilmCardsData) {
+    super();
+    this._allFilmCardsData = allFilmCardsData;
+  }
+
   getTemplate() {
-    return footerStatisticsTemplate();
+    return footerStatisticsTemplate(this._allFilmCardsData);
   }
 }
