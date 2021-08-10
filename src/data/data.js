@@ -106,6 +106,7 @@ const createAllFilmPopupData = () => {
   }, {});
 };
 
+
 export const allFilmCardsData = createAllFilmCardsData();
 export const allFilmPopupData = createAllFilmPopupData();
 export const watchListCardsData = allFilmCardsData.slice().filter((filmCard) => filmCard.watchList);
