@@ -15,7 +15,7 @@ const createFilmCardTemplate = (data) => {
     alreadyWatched,
     favorite,
   } = data;
-  return `<article class="film-card" data-id=${id}>
+  return `<article class="film-card">
             <h3 class="film-card__title">${title}</h3>
             <p class="film-card__rating">${totalRating}</p>
             <p class="film-card__info">
