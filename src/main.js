@@ -4,7 +4,7 @@ import {
   topRatedFilmCardsData,
   mostCommentedFilmCardsData,
   filtersData,
-  allFilmPopupData,
+  allFilmPopupData
 } from './data/data';
 import {render, remove} from './utils/render';
 import ProfileRatingView from './view/profile-rating';
