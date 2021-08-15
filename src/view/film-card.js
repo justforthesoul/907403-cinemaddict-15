@@ -2,7 +2,6 @@ import AbstractComponent from './abstract-component';
 
 const createFilmCardTemplate = (data) => {
   const {
-    id,
     title,
     totalRating,
     releaseYear,
